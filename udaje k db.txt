@@ -4,3 +4,7 @@ Názov databázy: usr_3_portal
 
 Heslo databázy: ku70e}[<koV$AIrz
 Toto heslo sa zobrazí iba raz.
+
+
+sudo -u www-data git -C /var/www/html/clients/user_3/potral_test pull
+sudo -u www-data git -C /var/www/html/clients/user_3/potral_test remote -v
