@@ -1,6 +1,6 @@
-# Booking Portal CMS
+# Booking Portal CMS + PWA
 
-Laravel-based booking portal and mini CMS system for service providers.
+Laravel-based booking portal and mini CMS system for service providers and Procedural web aplication.
 
 ## Features
 
@@ -16,7 +16,7 @@ Laravel-based booking portal and mini CMS system for service providers.
 - Booking date validation
 - Dynamic free time calculation
 - Flatpickr calendar integration
-- TailwindCSS frontend
+- PWA functionality
 
 ---
 
@@ -42,6 +42,7 @@ Users can:
 - open public booking pages
 - check available dates and times
 - create reservations
+- download web aplication to homescreen (PWA)
 
 ### Client Area
 
