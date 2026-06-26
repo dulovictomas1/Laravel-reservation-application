@@ -1,5 +1,7 @@
 @include('layouts.header')
 
+@include('layouts.header-navigation')
+
 <header class="bg-white shadow" style="background-color: rgb(48, 48, 48); color: white;">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <h2 class="heading-h2">Zoznam služieb</h2>
@@ -11,16 +13,17 @@
 
         <div class="service_list_all">
 
-            <div class="filter_list">
+            <div class="filter_list p-4 sm:p-8 bg-white shadow sm:rounded-lg complet_list">
                 <h2>Filtrovať podľa typu:</h2>
                 <br>
 
-                <form action="{{ route('sluzby.index') }}" method="get">
-                    <select name="tag" id="">
-                        <option value="1"  @selected(request('tag') == 1)>Služba 1</option>
-                        <option value="2"  @selected(request('tag') == 2)>Služba 2</option>
+                <form action="{{ route('sluzby.index') }}" method="get" class="form-service-list">
+                    <select name="tag" id="service-tag">                        
+                        @foreach ($tags as $tag)
+                            <option value="{{ $tag->id }}" @selected(request('tag') == $tag->id)>{{ $tag->name }}</option>
+                        @endforeach
                     </select>
-                    <br>
+                    
                     <button class="btn_filter" type="submit">Filtrovať</button>
                 </form>
                 <br>
@@ -50,5 +53,4 @@
         @endif
         </main>
         
-    </body>
-</html>
+@include('layouts.footer')

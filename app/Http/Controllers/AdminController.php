@@ -54,8 +54,12 @@ class AdminController extends Controller
 
     public function postupdate(Request $request, $id)
     {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+        ]);
+
         Post::where('id', $id)->update([
-            'name' => $request->name,
+            'name' => $validated['name'],
             'slug' => $request->slug,
             'text' => $request->text,
             'user_id' => $request->user()->id,
@@ -65,10 +69,16 @@ class AdminController extends Controller
 
         return back()->with('success', 'Status uložený');
 
+        return back()->withErrors('errors');
+
     }
 
     public function postcreatestore(Request $request)
     {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:100'],
+        ]);
+
         Post::create([
             'name' => $request->name,
             'slug'=> Str::slug($request->slug),

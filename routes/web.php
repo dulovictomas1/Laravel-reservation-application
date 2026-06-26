@@ -36,6 +36,7 @@ Route::post('/book/{token}', [PageController::class, 'store'])->name('book.store
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/settings', [UserDetailController::class, 'edit'])->name('user-details.edit');
     Route::post('/dashboard/settings', [UserDetailController::class, 'update'])->name('user-details.update');
+    Route::post('/dashboard/settings/tags', [UserDetailController::class, 'tag_update'])->name('user-details.tag_update');
 
     Route::get('/dashboard/books', [PageController::class, 'bookshow'])->name('book-details.show');
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Tag;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -46,13 +47,17 @@ class PageController extends Controller
         $query = UserDetail::where('status', 1);
 
         if($request->tag) {
-            $query->where('service_tag', $request->tag);
+            //$query->where('service_tag', $request->tag);
+            $query->whereHas('user.tags', function ($q) use ($request) {
+                $q->where('tags.id', $request->tag);
+            });
         }
 
         $details = $query->get();
 
         return view('services_list', [
             'details' => $details,
+            'tags' => Tag::all(),
         ]);
     }
 
@@ -120,7 +125,9 @@ class PageController extends Controller
         $home = Post::where('is_home', 1)->firstOrFail();
 
         return view('home', [
-            'home' => $home,            
+            'home' => $home,
+            'body_class' => 'home-body',
+            'head_class' => 'header_home',    
         ]);
     }
 

@@ -1,19 +1,26 @@
 @include('layouts.header')
 
-<header class="bg-white shadow" style="background-color: rgb(48, 48, 48); color: white;">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h2 class="heading-h2">Domov</h2>        
+<div class="{{ $body_class }} site-container">    
+
+    @include('layouts.header-navigation')
+
+    <div class="slider">
+        <img src="images/img-01-bg.jpg" class="slide active">
+        <img src="images/img-02-bg.jpg" class="slide">        
     </div>
-</header>
+    
 
-        <main>
+    <main>
+        <!-- Pridané utility triedy (napr. z Tailwindu), aby bol text na bielom pozadí čitateľný -->
+        <div class="hero_home">
+            <h1>Všetky služby na jednom mieste</h1>
 
-        <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-            <p>{{ $home->text }}</p>
+            <a href="{{ route('sluzby.index') }}" class="btn_home_services">Idem na to -></a>
+
+            <!-- <h1>{{-- $home->text --}}</h1> -->
         </div>
+    </main>
 
+</div>
 
-        </main>
-        
-    </body>
-</html>
+@include('layouts.footer')

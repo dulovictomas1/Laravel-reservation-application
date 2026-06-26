@@ -4,8 +4,59 @@
 
 body {
     font-size: 14px;
+    font-family: "Anta", sans-serif;
     background-repeat: no-repeat;
     min-height: -webkit-fill-available;
+}
+
+
+.lato-regular {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.home-body {
+    background-repeat: no-repeat;
+    min-height: -webkit-fill-available;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.605);
+}
+
+.header_home {
+    position: fixed;
+    width: 100%;
+    color: white;
+}
+
+.hero_home {
+    height: -webkit-fill-available;
+    align-content: center;
+    text-align: center;
+}
+
+.hero_home h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero_home h1 {
+        font-size: 3rem;        
+    }
+}
+
+.btn_home_services {
+    padding: 10px 20px;
+    background-color: rgb(79, 228, 79);
+    font-size: 1.5em;
+    transition: .3s ease;
+}
+
+.btn_home_services:hover {
+    background-color: rgb(27, 137, 27);
+    color: white;
 }
 
 .heading-h2 {
@@ -27,7 +78,7 @@ body {
 }
 
 .logo {
-  background: linear-gradient(20deg, #ffffff, #c00080 99.58%);
+  background: #c00080;
     -webkit-mask: url(http://localhost/laravel-app/public/images/diamon.svg) no-repeat center;
     mask: url(http://localhost/laravel-app/public/images/diamon.svg) no-repeat center;
     width: 40px;
@@ -35,12 +86,12 @@ body {
     -webkit-mask-size: contain;
 }
 
-/*.bg_logo {
-    background: rgb(48, 48, 48);
+.bg_logo {
+    background: rgb(255, 255, 255);
     padding: 7px;
     animation: bulb 5s infinite;
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.54);
-}*/
+    box-shadow: 2px 2px 7px rgb(255, 255, 255);
+}
 
 @keyframes bulb {
     0% {
@@ -73,6 +124,12 @@ body {
     padding: 13px 0px;
 }
 
+@media screen and (max-width: 768px) {
+    .header-inner {
+        max-width: 90%;
+    }
+}
+
 .navigation ul {
     display: flex;
     gap: 1em;
@@ -87,6 +144,12 @@ main {
     max-width: 1200px;
     margin: auto;
     padding: 1em 0;
+}
+
+@media screen and (max-width: 768px) {
+    main {        
+        height: -webkit-fill-available;
+    }   
 }
 
 .service {
@@ -124,6 +187,12 @@ main {
     padding-left: 40px;
     border-left: 1px solid rgb(48, 48, 48);
     float: left;
+}
+
+@media screen and (max-width: 768px) {
+    .form_booking {
+        min-height: auto;
+    }
 }
 
 .form_booking label {
@@ -198,6 +267,26 @@ main {
     gap: 2em;
 }
 
+@media screen and (max-width: 768px) {
+    .service_list_all {
+        display: block;
+    }
+    
+    .form-service-list #service-tag {
+        max-width: 180px;
+    }
+
+    .btn_filter {
+        padding: 10px 10px !important;        
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .filter_list {
+        max-width: 30%;        
+    }
+}
+
 .complet_list {
     flex: 1;
 }
@@ -207,4 +296,144 @@ main {
     color: white;
     padding: 3px 10px;
     margin-top: 10px;
+}
+
+/* Home slider */
+.slider {
+    position: absolute;
+    width: 100%;
+    max-width: 100%; /* Upravte podľa potreby */
+    height: 100%;    /* Upravte podľa potreby */
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Hladký prechod */
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+/* Slider END */
+
+@media screen and (min-width: 768px) {
+    .mobile_navigation {
+        display: none;
+    }
+}
+
+/* Mobile navigation - APP LIKE */
+@media screen and (max-width: 768px) {
+
+    .mobile_navigation {
+        display: inherit;
+    }
+    
+    .mobile_navigation {
+        position: fixed;
+        bottom: 0px;    
+        width: 100%;    
+        background-color: white;
+    }
+
+    .mibile-navigation-inner {
+        text-align: center;
+        justify-content: space-evenly;
+        display: flex;
+        max-width: 90%;
+        margin: auto;
+        color: #c00080;
+        padding: 12px;
+    }
+
+    .mobile_navigation i {
+        font-size: 30px;
+        display: block;
+    }
+
+
+    .main-nav {
+        transition: max-height 0.3s ease;
+    }
+
+    .main-nav {
+        overflow: hidden;
+        max-height: 0;
+        background: rgb(255, 255, 255);
+        position: absolute;
+        bottom: 75px;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        font-size: 17px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: inherit;
+        padding: 0px 0;
+    }
+
+    .main-nav.active {        
+        max-height: 100vh;
+        padding: 1em;
+        overflow-y: auto;   /* 👈 toto je kľúčové */
+    }
+
+    .icon-mobile-wrap span {
+        font-size: 12px;
+    }  
+
+}
+/* END */
+
+
+@media screen and (max-width: 768px) {
+    
+    .wrap {    
+        background-color: rgba(0, 0, 0, 0.64);
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        height: -webkit-fill-available;
+    }
+
+    .suuces_msg {
+        padding: 20px;
+        border: 1px solid white;
+        margin-left: 40px;
+        display: inline-block;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+        position: absolute;
+        top: 50%;
+    }
+
+    .btn_close_secess {
+        padding: 5px 10px;
+        background-color: gray;
+        margin-top: 10px;
+        color: white;
+        display: block !important;
+    }
+}
+
+.btn_close_secess {
+    display: none;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
 }

@@ -12,6 +12,10 @@
         <p class="text-green-600">{{ session('success') }}</p>
     @endif
 
+    @if (session('errors'))
+        <p class="text-red-600">{{ session('errors') }}</p>
+    @endif
+
         <div class="border p-4 mb-3" style="margin-bottom: 20px">            
             
             <form action="{{ route('admin.post.update', $posts->id) }}" method="post">
