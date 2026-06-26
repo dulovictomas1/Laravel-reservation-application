@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->foreignId('user_id')->before('id');
-            $table->string('slug')->nullable()->after('user_id');
+            $table->string('slug')->nullable();
             $table->string('status')->after('text')->default('0');
         });
     }
