@@ -8,3 +8,4 @@ Toto heslo sa zobrazí iba raz.
 
 sudo -u www-data git -C /var/www/html/clients/user_3/potral_test pull
 sudo -u www-data git -C /var/www/html/clients/user_3/potral_test remote -v
+sudo -u www-data php artisan queue:work --timeout=600

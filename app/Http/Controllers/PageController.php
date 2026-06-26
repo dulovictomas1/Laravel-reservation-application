@@ -122,10 +122,11 @@ class PageController extends Controller
 
     public function home() {
 
-        $home = Post::where('is_home', 1)->firstOrFail();
+        //Dočasne zakomentované kvôli tomu že HOME je teraz samostatná blade šablóna
+        //$home = Post::where('is_home', 1)->firstOrFail();
 
         return view('home', [
-            'home' => $home,
+            //'home' => $home,
             'body_class' => 'home-body',
             'head_class' => 'header_home',    
         ]);

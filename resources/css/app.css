@@ -21,6 +21,7 @@ body {
     min-height: -webkit-fill-available;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.605);
+    height: 100vh;
 }
 
 .header_home {
@@ -144,6 +145,7 @@ main {
     max-width: 1200px;
     margin: auto;
     padding: 1em 0;
+    
 }
 
 @media screen and (max-width: 768px) {

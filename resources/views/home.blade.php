@@ -10,7 +10,7 @@
     </div>
     
 
-    <main>
+    <main style="height: 100vh">
         <!-- Pridané utility triedy (napr. z Tailwindu), aby bol text na bielom pozadí čitateľný -->
         <div class="hero_home">
             <h1>Všetky služby na jednom mieste</h1>
