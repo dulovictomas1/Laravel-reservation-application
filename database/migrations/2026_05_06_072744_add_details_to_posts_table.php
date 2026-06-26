@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::table('posts', function (Blueprint $table) {
             $table->foreignId('user_id')->before('id');
             $table->string('slug')->nullable();
-            $table->string('status')->after('text')->default('0');
+            $table->string('text');
+            $table->string('status')->default('0');
         });
     }
 
