@@ -15,21 +15,21 @@ export default defineConfig({
                 name: 'Portál služueb',
                 short_name: 'Portál',
                 
-                start_url: '/laravel-app/public/',
-                scope: '/laravel-app/public/',
+                start_url: '/',
+                scope: '/',
 
                 display: 'standalone',
                 background_color: '#ffffff',
                 theme_color: '#111827',
                 icons: [
                     {
-                        src: 'http://localhost/laravel-app/public/icons/icon-192.png',
+                        src: '/icons/icon-192.png',
                         sizes: '192x192',
                         type: 'image/png',
                     },
 
                     {
-                        src: 'http://localhost/laravel-app/public/icons/icon-512.png',
+                        src: '/icons/icon-512.png',
                         sizes: '512x512',
                         type: 'image/png',
                     },
