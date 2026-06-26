@@ -73,19 +73,6 @@
     </div>
     @endif
 
-    <div class="wrap">
-        <div class="suuces_msg">
-            <p class="text-green-600">Vaša rezervácia prebehla úspešne.</p>
-                <p><strong>Detail:</strong></p>
-                <p>Meno: {{ session('success.name') }}</p>
-                <p>E-mail: {{ session('success.email') }}</p>
-                <p>Dátum: {{ session('success.date') }}</p>
-                <p>Čas: {{ session('success.time') }}</p>
-
-                <button class="btn_close_secess">Zavrieť</button>
-        </div>
-    </div>
-
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
