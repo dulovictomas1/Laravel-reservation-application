@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3 class="heading-h3" style="color: white"><strong>Rezervovať si termín u {{ $detail->job_name }}</strong></h3>
+<h3 class="heading-h3"><strong>Rezervovať si termín u {{ $detail->job_name }}</strong></h3>
 
 <form action="{{ route('book.show', $user->token_UNIQ) }}" method="get" class="check_times">
     @csrf

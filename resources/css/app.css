@@ -149,6 +149,7 @@ main {
 @media screen and (max-width: 768px) {
     main {        
         height: -webkit-fill-available;
+        max-width: 90%;
     }   
 }
 
@@ -192,6 +193,8 @@ main {
 @media screen and (max-width: 768px) {
     .form_booking {
         min-height: auto;
+        padding-left: 0px;
+        border: 0px
     }
 }
 
@@ -218,6 +221,13 @@ main {
 .check_times {
     padding-left: 40px;
     border-left: 1px solid rgb(48, 48, 48);
+}
+
+@media screen and (max-width: 768px) {
+    .check_times {
+        padding-left: 0px;
+        border-left: 0px;
+    }    
 }
 
 .check_times input, .check_times select {
